@@ -1,0 +1,19 @@
+<p>CONDICIONALES EN LOS COMPONENTES</p>
+
+<button
+  mat-flat-button 
+  color="primary"
+  (click)="onToggleComponents()"
+  >Toggle componentes</button>
+
+<app-component-one *ngIf="isShowingComponents" titulo="Componente 1"></app-component-one>
+<app-component-one *ngIf="isShowingComponents" titulo="Componente 2"></app-component-one>
+<app-component-one *ngIf="!isShowingComponents" titulo="Componente 3"></app-component-one>
+
+
+<br>
+<br><br><br>
+
+<p>LOOP EN COMPONENTES (GENERAR COMPONENTES DINAMICOS)</p>
+
+<app-component-one *ngFor="let x of components" [titulo]="x"></app-component-one>
