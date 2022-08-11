@@ -1,1 +1,27 @@
-<p>page2 works!</p>
+<mat-card>
+  <form [formGroup]="formulario" (ngSubmit)="onEnviarDatos()">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre</mat-label>
+      <input matInput placeholder="Nombre" formControlName="nombre">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido Paterno</mat-label>
+      <input matInput placeholder="Apellido Paterno" formControlName="paterno">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Apellido Materno</mat-label>
+      <input matInput placeholder="Apellido Materno" formControlName="materno">
+    </mat-form-field>
+    <mat-radio-group formControlName="sexo">
+      <mat-radio-button color="primary" [value]="true">Masculino</mat-radio-button>
+      <mat-radio-button color="primary" [value]="false">Femenino</mat-radio-button>
+    </mat-radio-group>
+    <br>
+    <button
+      type="submit"
+      mat-flat-button
+      color="primary"
+      [disabled]="formulario.invalid"
+      >Enviar Datos</button>
+  </form>
+</mat-card>
